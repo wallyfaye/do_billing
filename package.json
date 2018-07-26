@@ -1,0 +1,48 @@
+{
+  "name": "billing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "nodemon index.js",
+    "test": "cross-env NODE_ENV=test nodemon --exec nyc mocha",
+    "docs": "nodemon --exec npm run gendocs",
+    "gendocs": "jsdoc -r -c jsdoc.json"
+  },
+  "dependencies": {
+    "csv": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-env": "latest",
+    "babel-plugin-syntax-async-functions": "latest",
+    "babel-plugin-dynamic-import-node": "latest",
+    "babel-plugin-istanbul": "latest",
+    "currency.js": "latest",
+    "mocha": "latest",
+    "chai": "latest",
+    "nyc": "latest",
+    "cross-env": "latest",
+    "jsdoc": "latest",
+    "minami": "latest"
+  },
+  "author": "",
+  "license": "ISC",
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false,
+    "check-coverage": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "require": [
+      "babel-core/register",
+      "babel-polyfill"
+    ],
+    "all": true
+  }
+}

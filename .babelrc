@@ -1,0 +1,9 @@
+{
+	"presets": ["env"],
+	"plugins": ["syntax-async-functions", "dynamic-import-node"],
+	"env": {
+		"test": {
+			"plugins": [ "istanbul" ]
+		}
+	}
+}
